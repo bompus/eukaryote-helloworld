@@ -1,0 +1,33 @@
+{
+  "name": "eukaryote-helloworld",
+  "version": "1.0.0",
+  "description": "Example genetic algorithm using eukaryote library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eukaryote",
+    "evolution",
+    "evolutionary",
+    "algorithm",
+    "genetic",
+    "evolve",
+    "natural",
+    "selection",
+    "replication",
+    "mutation",
+    "mutate",
+    "crossover",
+    "organism",
+    "species",
+    "individual",
+    "population",
+    "genotype",
+    "phenotype",
+    "tutorial",
+    "example"
+  ],
+  "author": "Corey Ferguson <corey.t.ferguson@gmail.com>",
+  "license": "MIT"
+}
