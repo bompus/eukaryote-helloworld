@@ -1,27 +1,40 @@
-<a name="Individual"></a>
-## Individual
+<a name="HelloWorld"></a>
+## HelloWorld
 **Kind**: global class  
 
-* [Individual](#Individual)
-    * [new Individual(genotype)](#new_Individual_new)
-    * [.genotype(g)](#Individual+genotype) ⇒ <code>string</code> &#124; <code>[Individual](#Individual)</code>
+* [HelloWorld](#HelloWorld)
+    * [new HelloWorld()](#new_HelloWorld_new)
+    * [._fitness(individual)](#HelloWorld+_fitness) ⇒ <code>integer</code> ℗
+    * [._mutate()](#HelloWorld+_mutate) ℗
+    * [._randomGene()](#HelloWorld+_randomGene) ⇒ <code>string</code> ℗
 
-<a name="new_Individual_new"></a>
-### new Individual(genotype)
-
-| Param | Type |
-| --- | --- |
-| genotype | <code>string</code> | 
-
-<a name="Individual+genotype"></a>
-### individual.genotype(g) ⇒ <code>string</code> &#124; <code>[Individual](#Individual)</code>
-Get or set genotype for this individual. Pass genotype as first argument
-to set genotype. When setting genotype, the `individual` instance is
-returned for chaining. When no arguments are given the genotype is returned.
-
-**Kind**: instance method of <code>[Individual](#Individual)</code>  
+<a name="new_HelloWorld_new"></a>
+### new HelloWorld()
 
 | Param | Type | Description |
 | --- | --- | --- |
-| g | <code>string</code> | Genotype to set |
+| options.target | <code>string</code> | Target value is a representation of the most fit individual. |
 
+<a name="HelloWorld+_fitness"></a>
+### helloWorld._fitness(individual) ⇒ <code>integer</code> ℗
+Calculate fitness score of given individual. Compare against target value.
+
+**Kind**: instance method of <code>[HelloWorld](#HelloWorld)</code>  
+**Returns**: <code>integer</code> - Returns 1 point for every character in the same location as target.  
+**Access:** private  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| individual | <code>Individual</code> | Individual whose fitness is to be calculated. |
+
+<a name="HelloWorld+_mutate"></a>
+### helloWorld._mutate() ℗
+**Kind**: instance method of <code>[HelloWorld](#HelloWorld)</code>  
+**Access:** private  
+<a name="HelloWorld+_randomGene"></a>
+### helloWorld._randomGene() ⇒ <code>string</code> ℗
+Retrieves a single random gene from gene pool.
+
+**Kind**: instance method of <code>[HelloWorld](#HelloWorld)</code>  
+**Returns**: <code>string</code> - a single gene  
+**Access:** private  
