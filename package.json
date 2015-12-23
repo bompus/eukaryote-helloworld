@@ -1,6 +1,6 @@
 {
   "name": "eukaryote-helloworld",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Example genetic algorithm using eukaryote library.",
   "main": "src/helloWorld.js",
   "scripts": {
