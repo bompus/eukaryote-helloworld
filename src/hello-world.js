@@ -12,13 +12,13 @@ var HelloWorld = function(options) {
   }
 
   this._target = options.target;
-  this._genepool = '`1234567890-=qwertyuiop[]\\asdfghjkl;\'zxcvbnm,./!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?';
+  this._genepool = '`1234567890-=qwertyuiop[]\\asdfghjkl;\'zxcvbnm,./!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>? ';
   this._rateOfMutation = 0.3;
 
   var that = this;
   this.environment = new Eukaryote.Genetic.Environment({
-    populationSize: options.populationSize,
-    numberOfGenerations: options.numberOfGenerations,
+    populationSize: options.populationSize || 100,
+    numberOfGenerations: options.numberOfGenerations || 5000,
     fitnessSync: function(individual) {
       return that._fitness(individual);
     },
