@@ -30,7 +30,8 @@ describe('HelloWorld', function() {
         var helloWorld = new HelloWorld({
           target: '` ',
           populationSize: 50,
-          numberOfGenerations: 100
+          numberOfGenerations: 100,
+          logGenerations: false
         });
         helloWorld.seed(callback);
       }
@@ -53,7 +54,8 @@ describe('HelloWorld', function() {
 
     it('should evolve into `hello world`', function(done) {
       var helloWorld = new HelloWorld({
-        target: 'hello world'
+        target: 'hello world',
+        logGenerations: false
       });
       helloWorld.seed(function(error, population) {
         expect(population[0].genotype).toEqual('hello world');
@@ -70,7 +72,10 @@ describe('HelloWorld', function() {
   describe('_fitness', function() {
 
     it('should calculate correct fitness', function() {
-      var helloWorld = new HelloWorld({ target: 'asdf' });
+      var helloWorld = new HelloWorld({
+        target: 'asdf',
+        logGenerations: false
+      });
       var fitness = helloWorld._fitness({ genotype: 'asdf' });
       expect(fitness).toEqual(4);
       fitness = helloWorld._fitness({ genotype: 'asd' });
@@ -90,7 +95,10 @@ describe('HelloWorld', function() {
   describe('_mutate', function() {
 
     it('should mutate genotype', function() {
-      var helloWorld = new HelloWorld({ target: 'asdf' });
+      var helloWorld = new HelloWorld({
+        target: 'asdf',
+        logGenerations: false
+      });
       var individual = { genotype: 'coreys long genotype should very likely mutate into something different' };
       individual._rateOfMutation = 1;
       var lastGenotype = individual.genotype;
@@ -110,7 +118,10 @@ describe('HelloWorld', function() {
   describe('_randomGene', function() {
 
     it('should return a single gene', function() {
-      var helloWorld = new HelloWorld({ target: 'asdf' });
+      var helloWorld = new HelloWorld({
+        target: 'asdf',
+        logGenerations: false
+      });
       for (var c=0; c<100; c++) {
         var gene = helloWorld._randomGene();
         expect(gene.length).toEqual(1);

@@ -15,6 +15,9 @@ var HelloWorld = function(options) {
   this._genepool = '`1234567890-=qwertyuiop[]\\asdfghjkl;\'zxcvbnm,./!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>? ';
   this._rateOfMutation = 0.3;
 
+  this._logGenerations = true;
+  if (options.logGenerations !== undefined) this._logGenerations = options.logGenerations;
+
   var that = this;
   this.environment = new Eukaryote.Genetic.Environment({
     populationSize: options.populationSize || 100,
@@ -26,6 +29,7 @@ var HelloWorld = function(options) {
       that._mutate(individual);
     },
     generationSync: function(g) {
+      if (that._logGenerations) console.log('Generation: ' + g + ', most fit individual: ', that.environment.population[0].genotype);
       return that.environment.population[0].genotype !== that._target;
     }
   });
