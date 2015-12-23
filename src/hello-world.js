@@ -3,7 +3,9 @@ var Eukaryote = require('../../eukaryote/src/eukaryote');
 
 /**
  * @class
+ * @description selects individuals whose genotypes most closely resemble `hello world`.
  * @param {string} options.target Target value is a representation of the most fit individual.
+ * @param {boolean} options.logGenerations Indicates whether to print each generations most fit individual to console.
  */
 var HelloWorld = function(options) {
   options = options || {};
@@ -35,6 +37,9 @@ var HelloWorld = function(options) {
   });
 };
 
+/**
+ * Seed the first individual and start evolution.
+ */
 HelloWorld.prototype.seed = function(callback) {
   var that = this;
   var individual = { genotype: 'a' };
@@ -73,6 +78,9 @@ HelloWorld.prototype._fitness = function(individual) {
 
 /**
  * @private
+ * @description
+ * Mutate, add a gene, or remove a gene from an individual's genotype.
+ * @param {object} individual The individual to mutate.
  */
 HelloWorld.prototype._mutate = function(individual) {
   var newGenotype = '';
