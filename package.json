@@ -35,7 +35,7 @@
   "author": "Corey Ferguson <corey.t.ferguson@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "eukaryote": "^2.0.0"
+    "eukaryote": "^2.0.1"
   },
   "devDependencies": {
     "async": "^1.5.0",

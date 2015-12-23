@@ -1,5 +1,5 @@
 
-var Eukaryote = require('../../eukaryote/src/eukaryote');
+var Eukaryote = require('eukaryote');
 
 /**
  * @class
